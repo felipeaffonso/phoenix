@@ -1,0 +1,53 @@
+# Training
+
+This directory is the source of truth for the current Phoenix training program.
+
+The immediate goal is practical: create Strong templates and train consistently.
+
+## Current weekly structure
+
+| Day | Plan |
+|---|---|
+| Monday | Fasted cardio only |
+| Tuesday | Upper A |
+| Wednesday | Lower A |
+| Thursday | Recovery + cardio |
+| Friday | Upper B |
+| Saturday | Lower B |
+| Sunday | Shoulders + Arms |
+
+## Constraints
+
+- Avoid heavy axial loading.
+- Avoid movements with aggressive twisting near the hip/lumbar area.
+- Avoid heavy squat, heavy deadlift and very heavy leg press for now.
+- Shoulder history: right rotator cuff surgery.
+- Prefer machine/cable-supported exercises.
+- Prioritize consistency, technique and progression over ego lifting.
+
+## Strong setup rule
+
+In Strong templates:
+
+- Set the minimum rep number in the template.
+- Put the target rep range in the Sticky Note.
+- Leave initial weights empty or conservative.
+- Use the Sticky Note as execution guidance.
+
+Example:
+
+```text
+Template reps: 10
+Sticky Note: Meta 10-15 reps
+```
+
+## Files
+
+- `PROGRAM.md` — full weekly program
+- `PROGRESSION.md` — how to increase loads
+- `TEMPLATE-01-UPPER-A.md`
+- `TEMPLATE-02-LOWER-A.md`
+- `TEMPLATE-03-RECOVERY.md`
+- `TEMPLATE-04-UPPER-B.md`
+- `TEMPLATE-05-LOWER-B.md`
+- `TEMPLATE-06-SHOULDERS-ARMS.md`
