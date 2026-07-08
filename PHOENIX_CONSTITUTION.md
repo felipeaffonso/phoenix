@@ -13,8 +13,10 @@ Hierarchy:
 
 1. PHOENIX_CONSTITUTION.md
 2. ADRs
-3. Blueprint
-4. Code
+3. OpenSpec main specs
+4. Active OpenSpec changes
+5. Module documentation
+6. Code
 
 ## Mission
 
@@ -68,6 +70,7 @@ Business logic must never be placed in phoenix-infra.
 Any AI working on this repository must:
 
 - Read this document first.
+- Use OpenSpec as the operational spec workflow before implementing changes.
 - Never change architecture without an ADR.
 - Never expand MVP scope.
 - Never replace official technologies.

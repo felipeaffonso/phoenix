@@ -7,6 +7,11 @@ Relevant ADRs:
 
 - [`docs/adr/0001-record-application-architecture.md`](adr/0001-record-application-architecture.md)
 
+Relevant OpenSpec specs:
+
+- [`openspec/specs/application-architecture/spec.md`](../openspec/specs/application-architecture/spec.md)
+- [`openspec/specs/project-governance/spec.md`](../openspec/specs/project-governance/spec.md)
+
 Phoenix is split into two repositories.
 
 ## phoenix-infra
@@ -69,6 +74,9 @@ The MVP scope is frozen by the Constitution and includes only:
 
 MVP product details are documented in [`docs/mvp/`](mvp/).
 
+Implementation requirements are governed by OpenSpec specs in
+[`openspec/specs/`](../openspec/specs/).
+
 ## Product backlog domains
 
 The following domains belong to the broader Phoenix vision and must not enter
@@ -86,5 +94,8 @@ the MVP unless a documented decision changes the scope:
 - Lab exams
 - Goals
 - Weekly check-ins
+- Professional portal
+- Personal trainer student management
+- Professional-managed workout templates
 - AI analysis
 - External integrations

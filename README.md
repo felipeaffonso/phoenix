@@ -67,7 +67,16 @@ phoenix/
 
 ## Key principle
 
-The Phoenix documentation is the source of truth.
+The Phoenix documentation and OpenSpec specs are the source of truth.
+
+Authority order:
+
+1. `PHOENIX_CONSTITUTION.md`
+2. ADRs in `docs/adr/`
+3. OpenSpec main specs in `openspec/specs/`
+4. Active OpenSpec changes in `openspec/changes/`
+5. Module documentation in `docs/`
+6. Code
 
 The Phoenix Web App is the primary client.
 
@@ -75,6 +84,8 @@ External tools may inspire workflows, but they are not part of the core
 execution loop.
 
 MVP product docs live in [`docs/mvp/`](docs/mvp/).
+
+OpenSpec specs live in [`openspec/specs/`](openspec/specs/).
 
 ---
 
@@ -130,6 +141,21 @@ This repository is for the product, knowledge base and future application code.
 ## Development
 
 The backend scaffold is a Java 25 / Spring Boot 4.x Maven application.
+
+Before implementing a behavior, schema, API, product-scope or architecture
+change:
+
+```bash
+openspec list --specs
+openspec list
+openspec validate
+```
+
+Create an OpenSpec change for implementation work that changes behavior:
+
+```bash
+openspec new change <change-name>
+```
 
 Run backend tests with:
 

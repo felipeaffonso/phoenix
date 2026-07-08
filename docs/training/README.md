@@ -1,6 +1,8 @@
 # Training
 
-This directory is the source of truth for the current Phoenix training program.
+This directory is the source of truth for the current Phoenix training program
+content. Implementation requirements are governed by the Constitution, ADRs and
+OpenSpec specs.
 
 The immediate goal is practical: define Phoenix Web App workout templates and
 train consistently.

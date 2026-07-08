@@ -1,0 +1,53 @@
+schema: spec-driven
+
+context: |
+  Phoenix is a Personal Operating System for training, health and long-term
+  performance.
+
+  Authority order:
+  1. PHOENIX_CONSTITUTION.md
+  2. ADRs
+  3. OpenSpec main specs
+  4. Active OpenSpec changes
+  5. Module documentation
+  6. Code
+
+  Official stack:
+  - Java 25 LTS
+  - Spring Boot 4.x
+  - Spring Modulith
+  - Spring Data JDBC
+  - PostgreSQL
+  - Redis when there is a documented use case
+  - Next.js
+  - TypeScript
+  - PWA-first frontend
+
+  MVP scope is frozen:
+  - Authentication
+  - User profiles
+  - Exercise library
+  - Workout templates
+  - Workout player
+  - Workout history
+  - Progression engine
+
+  Anything else belongs to Product Backlog unless documented otherwise.
+
+rules:
+  proposal:
+    - Keep proposals scoped to the frozen MVP unless explicitly approved.
+    - Always include Non-goals.
+    - Mention whether an ADR is required.
+  design:
+    - Prefer simple Spring Modulith module boundaries.
+    - Do not introduce new dependencies unless necessary and documented.
+    - Keep phoenix-infra concerns out of product design.
+  specs:
+    - Use SHALL for requirements.
+    - Every requirement must include at least one scenario.
+    - Keep implementation details aligned with PHOENIX_CONSTITUTION.md and ADRs.
+  tasks:
+    - Include validation steps.
+    - Include documentation updates.
+    - Break work into reviewable increments.

@@ -9,6 +9,7 @@ Goal: establish Phoenix as a documented personal operating system.
 - [x] Training documentation
 - [x] Web-App-ready workout templates
 - [x] Initial MVP product blueprint
+- [x] Initial OpenSpec governance, architecture and exercise-library specs
 - [ ] Initial health documentation
 - [ ] Initial nutrition documentation
 
@@ -73,7 +74,24 @@ Goal: document nutrition execution while respecting Marcia's plan.
 - [ ] n8n workflows
 - [ ] Weekly reports
 
-## v0.8 — AI Coach Backlog
+## v0.8 — Professional Portal Backlog
+
+Goal: allow personal trainers and other training professionals to manage
+students through Phoenix after the individual MVP is stable.
+
+- [ ] Professional profile type
+- [ ] `PROFESSIONAL` system role
+- [ ] Professional onboarding and verification policy
+- [ ] Student roster management
+- [ ] Student invitation and account linking
+- [ ] Professional-managed exercise catalog entries
+- [ ] Professional workout template builder
+- [ ] Assign workout templates to students
+- [ ] Review student workout history
+- [ ] Permission boundaries between professional, student and admin accounts
+- [ ] Audit trail for professional changes
+
+## v0.9 — AI Coach Backlog
 
 - [ ] Weekly analysis
 - [ ] Training progression recommendations
