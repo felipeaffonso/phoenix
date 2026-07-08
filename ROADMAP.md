@@ -7,23 +7,50 @@ Goal: establish Phoenix as a documented personal operating system.
 - [x] Project vision
 - [x] Repository structure
 - [x] Training documentation
-- [x] Strong-ready templates
+- [x] Web-App-ready workout templates
+- [x] Initial MVP product blueprint
 - [ ] Initial health documentation
 - [ ] Initial nutrition documentation
 
 ## v0.2 — Training Engine
 
-Goal: turn training documentation into structured data.
+Goal: turn training documentation into the first MVP data model.
 
 - [ ] Exercise catalog
 - [ ] Template schema
 - [ ] Progression rules
-- [ ] Strong import/export strategy
 - [ ] Workout session logging model
 
-## v0.3 — Health Engine
+## v0.3 — Phoenix App MVP Backend
 
-Goal: track and analyze body composition.
+Goal: implement the backend foundation for the frozen MVP scope.
+
+- [x] Java 25 project setup
+- [x] Spring Boot 4.x application
+- [ ] Spring Modulith boundaries
+- [ ] Authentication
+- [ ] User profiles
+- [ ] Exercise library
+- [ ] Workout templates
+- [ ] Workout player API
+- [ ] Workout history
+- [ ] Progression engine
+
+## v0.4 — Phoenix App MVP Frontend
+
+Goal: implement the first usable PWA client for the frozen MVP scope.
+
+- [ ] Next.js application
+- [ ] Authentication UI
+- [ ] Exercise library UI
+- [ ] Workout template builder
+- [ ] Workout player
+- [ ] Workout history
+- [ ] Progression feedback
+
+## v0.5 — Health Backlog
+
+Goal: track and analyze body composition after the MVP is stable.
 
 - [ ] Weight logs
 - [ ] Measurements
@@ -31,7 +58,7 @@ Goal: track and analyze body composition.
 - [ ] Medication schedule
 - [ ] Supplement logs
 
-## v0.4 — Nutrition Layer
+## v0.6 — Nutrition Backlog
 
 Goal: document nutrition execution while respecting Marcia's plan.
 
@@ -40,24 +67,13 @@ Goal: document nutrition execution while respecting Marcia's plan.
 - [ ] Meal execution notes
 - [ ] Sodium control notes
 
-## v0.5 — Phoenix App MVP
+## v0.7 — Integrations Backlog
 
-Goal: first usable web app.
-
-- [ ] FastAPI backend
-- [ ] PostgreSQL models
-- [ ] Next.js frontend
-- [ ] Auth
-- [ ] Dashboard
-
-## v0.6 — Integrations
-
-- [ ] Strong CSV import
 - [ ] Apple Health export import
 - [ ] n8n workflows
 - [ ] Weekly reports
 
-## v0.7 — AI Coach
+## v0.8 — AI Coach Backlog
 
 - [ ] Weekly analysis
 - [ ] Training progression recommendations

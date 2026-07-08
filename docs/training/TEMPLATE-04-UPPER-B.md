@@ -15,7 +15,7 @@ Design:
 
 **Portuguese:** Remada iso-lateral máquina
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -24,7 +24,7 @@ Design:
 | Target reps | 8-12 |
 | Rest | 90s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 8–12 reps
@@ -46,7 +46,7 @@ Phoenix Tips:
 
 **Portuguese:** Supino inclinado máquina
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -55,7 +55,7 @@ Phoenix Tips:
 | Target reps | 8-12 |
 | Rest | 90s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 8–12 reps
@@ -77,7 +77,7 @@ Phoenix Tips:
 
 **Portuguese:** Puxada alta pegada supinada
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -86,7 +86,7 @@ Phoenix Tips:
 | Target reps | 10-12 |
 | Rest | 90s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 10–12 reps
@@ -108,7 +108,7 @@ Phoenix Tips:
 
 **Portuguese:** Crucifixo / crossover no cabo
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -117,7 +117,7 @@ Phoenix Tips:
 | Target reps | 12-15 |
 | Rest | 60s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 12–15 reps
@@ -139,7 +139,7 @@ Phoenix Tips:
 
 **Portuguese:** Crucifixo inverso máquina
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -148,7 +148,7 @@ Phoenix Tips:
 | Target reps | 12-15 |
 | Rest | 60s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 12–15 reps
@@ -170,7 +170,7 @@ Phoenix Tips:
 
 **Portuguese:** Rosca bíceps máquina
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -179,7 +179,7 @@ Phoenix Tips:
 | Target reps | 10-15 |
 | Rest | 60s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 10–15 reps

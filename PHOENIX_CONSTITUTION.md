@@ -18,7 +18,8 @@ Hierarchy:
 
 ## Mission
 
-Build a production-quality application capable of replacing Strong as the primary workout application.
+Build a production-quality Web App as the primary workout application and the
+center of the Phoenix product.
 
 ## MVP
 

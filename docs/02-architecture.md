@@ -1,5 +1,12 @@
 # Architecture
 
+This document follows `PHOENIX_CONSTITUTION.md`, which is the highest
+authority for architecture decisions in this repository.
+
+Relevant ADRs:
+
+- [`docs/adr/0001-record-application-architecture.md`](adr/0001-record-application-architecture.md)
+
 Phoenix is split into two repositories.
 
 ## phoenix-infra
@@ -12,15 +19,19 @@ Responsible for Docker, Traefik, Cloudflare Tunnel, Portainer, monitoring, stora
 
 Product and knowledge repository.
 
-Responsible for documentation, training system, health model, nutrition execution notes, future backend, future frontend and AI analysis.
+Responsible for documentation, training system, future backend and future
+frontend.
+
+Health, nutrition, AI analysis and external integrations are product backlog
+domains unless a documented decision moves them into active scope.
 
 ## Current execution architecture
 
 ```text
-Markdown docs -> Strong templates -> workout execution
+Markdown docs -> Phoenix Web App specifications -> workout execution
 ```
 
-## Future app architecture
+## Target app architecture
 
 ```text
 Web Frontend
@@ -29,31 +40,40 @@ Web Frontend
             -> Phoenix data model
 ```
 
-## Planned backend stack
+## Official backend stack
 
-- FastAPI
-- SQLAlchemy
-- Alembic
+- Java 25 LTS
+- Spring Boot 4.x
+- Spring Modulith
+- Spring Data JDBC
 - PostgreSQL
 - Redis
-- Pydantic
 
-## Planned frontend stack
+## Official frontend stack
 
 - Next.js
 - TypeScript
-- Tailwind CSS
-- shadcn/ui
-- TanStack Query
 - PWA-first
 
-## Data domains
+## MVP domains
 
-- Users
-- Exercises
+The MVP scope is frozen by the Constitution and includes only:
+
+- Authentication
+- User profiles
+- Exercise library
 - Workout templates
-- Workout sessions
-- Exercise sets
+- Workout player
+- Workout history
+- Progression engine
+
+MVP product details are documented in [`docs/mvp/`](mvp/).
+
+## Product backlog domains
+
+The following domains belong to the broader Phoenix vision and must not enter
+the MVP unless a documented decision changes the scope:
+
 - Cardio sessions
 - Body weight
 - Measurements
@@ -66,3 +86,5 @@ Web Frontend
 - Lab exams
 - Goals
 - Weekly check-ins
+- AI analysis
+- External integrations

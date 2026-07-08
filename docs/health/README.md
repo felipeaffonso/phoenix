@@ -2,6 +2,9 @@
 
 Health documentation for Phoenix.
 
+Health is a product backlog domain after the MVP defined in
+`PHOENIX_CONSTITUTION.md`.
+
 This module will track and interpret:
 
 - body weight

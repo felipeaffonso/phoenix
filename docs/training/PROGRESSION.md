@@ -10,13 +10,13 @@ Example:
 4 sets x 10-15 reps
 ```
 
-In Strong, the template uses the minimum target:
+In Phoenix, the template uses the minimum target:
 
 ```text
 4 sets x 10 reps
 ```
 
-The Sticky Note tells the real target:
+The Execution Note tells the real target:
 
 ```text
 Meta: 10-15 reps

@@ -10,14 +10,14 @@ No heavy lifting.
 
 **Portuguese:** Transport / Elíptico
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
 | Duration | 35-45 min |
 | Intensity | Zone 2 |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Cardio Zona 2
@@ -39,13 +39,13 @@ Phoenix Tips:
 
 **Portuguese:** Mobilidade leve
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
 | Duration | 10 min |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Mobilidade leve

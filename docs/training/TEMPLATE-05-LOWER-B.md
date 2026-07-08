@@ -15,7 +15,7 @@ Design:
 
 **Portuguese:** Mesa flexora deitada
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -24,7 +24,7 @@ Design:
 | Target reps | 10-15 |
 | Rest | 75s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 10–15 reps
@@ -49,7 +49,7 @@ Phoenix Tips:
 
 **Portuguese:** Cadeira extensora
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -58,7 +58,7 @@ Phoenix Tips:
 | Target reps | 12-15 |
 | Rest | 75s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 12–15 reps
@@ -80,7 +80,7 @@ Phoenix Tips:
 
 **Portuguese:** Abdutora
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -89,7 +89,7 @@ Phoenix Tips:
 | Target reps | 12-20 |
 | Rest | 60s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 12–20 reps
@@ -111,7 +111,7 @@ Phoenix Tips:
 
 **Portuguese:** Coice glúteo máquina
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -120,7 +120,7 @@ Phoenix Tips:
 | Target reps | 12-15 |
 | Rest | 60s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 12–15 reps
@@ -142,7 +142,7 @@ Phoenix Tips:
 
 **Portuguese:** Panturrilha em pé máquina
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -151,7 +151,7 @@ Phoenix Tips:
 | Target reps | 12-20 |
 | Rest | 60s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 12–20 reps
@@ -173,7 +173,7 @@ Phoenix Tips:
 
 **Portuguese:** Prancha
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -182,7 +182,7 @@ Phoenix Tips:
 | Target duration | 20-40s |
 | Rest | 60s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 20–40 s

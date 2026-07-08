@@ -6,9 +6,10 @@ Phoenix is a personal operating system for health, training, nutrition, data, au
 
 It is not just a workout tracker.
 
-Phoenix connects what is currently scattered across multiple tools:
+Phoenix's long-term vision is to connect what is currently scattered across
+multiple tools:
 
-- Strong for workout execution
+- Phoenix Web App for workout execution
 - Apple Health / wearable data for biometrics
 - nutrition guidance from Marcia
 - body composition reports
@@ -26,14 +27,19 @@ The goal is to create one reliable source of truth for long-term physical transf
 
 The immediate priority is practical:
 
-> Be ready to train tomorrow using Strong, with Phoenix documentation as the source of truth.
+> Define the training system so the Phoenix Web App can become the center of
+> workout execution.
 
 For now:
 
 - **Markdown docs** define the program.
-- **Strong** executes the templates.
-- **Phoenix Infra** hosts future apps and services.
-- **Phoenix App** will later automate analysis, dashboards and integrations.
+- **Phoenix Web App** is the primary product experience.
+- **Phoenix Infra** hosts infrastructure only.
+- **Phoenix App** will own product code and business logic.
+
+The MVP scope is frozen by `PHOENIX_CONSTITUTION.md` and includes only
+authentication, user profiles, exercise library, workout templates, workout
+player, workout history and progression engine.
 
 ---
 
@@ -43,8 +49,9 @@ For now:
 phoenix/
 ├── docs/
 │   ├── 00-vision.md
-│   ├── 01-roadmap.md
 │   ├── 02-architecture.md
+│   ├── adr/
+│   ├── mvp/
 │   ├── health/
 │   ├── nutrition/
 │   └── training/
@@ -62,11 +69,12 @@ phoenix/
 
 The Phoenix documentation is the source of truth.
 
-Apps are clients.
+The Phoenix Web App is the primary client.
 
-Strong is currently the workout client.
+External tools may inspire workflows, but they are not part of the core
+execution loop.
 
-Later, Phoenix may sync to Strong, read Strong exports, analyze workouts and suggest progression.
+MVP product docs live in [`docs/mvp/`](docs/mvp/).
 
 ---
 
@@ -77,13 +85,15 @@ Later, Phoenix may sync to Strong, read Strong exports, analyze workouts and sug
 - 5 days/week strength training
 - daily Zone 2 cardio
 - lumbar-safe and shoulder-aware exercise selection
-- Strong-ready templates
-- sticky notes in Portuguese
+- Web-App-ready workout templates
+- execution notes in Portuguese
 - progression rules
 
 See: [`docs/training/README.md`](docs/training/README.md)
 
 ### Health
+
+Health is a product backlog domain after the MVP.
 
 - body composition
 - medications
@@ -99,6 +109,8 @@ Nutrition is guided by Marcia.
 
 Phoenix documents principles, substitutions, grocery lists and execution notes without replacing professional nutrition guidance.
 
+Nutrition is a product backlog domain after the MVP.
+
 See: [`docs/nutrition/README.md`](docs/nutrition/README.md)
 
 ---
@@ -112,6 +124,18 @@ felipeaffonso/phoenix-infra
 ```
 
 This repository is for the product, knowledge base and future application code.
+
+---
+
+## Development
+
+The backend scaffold is a Java 25 / Spring Boot 4.x Maven application.
+
+Run backend tests with:
+
+```bash
+mvn test
+```
 
 ---
 

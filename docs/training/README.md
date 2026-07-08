@@ -2,7 +2,8 @@
 
 This directory is the source of truth for the current Phoenix training program.
 
-The immediate goal is practical: create Strong templates and train consistently.
+The immediate goal is practical: define Phoenix Web App workout templates and
+train consistently.
 
 ## Current weekly structure
 
@@ -25,20 +26,20 @@ The immediate goal is practical: create Strong templates and train consistently.
 - Prefer machine/cable-supported exercises.
 - Prioritize consistency, technique and progression over ego lifting.
 
-## Strong setup rule
+## Phoenix template rule
 
-In Strong templates:
+In Phoenix workout templates:
 
 - Set the minimum rep number in the template.
-- Put the target rep range in the Sticky Note.
+- Put the target rep range in the execution note.
 - Leave initial weights empty or conservative.
-- Use the Sticky Note as execution guidance.
+- Use the execution note as guidance during the workout.
 
 Example:
 
 ```text
 Template reps: 10
-Sticky Note: Meta 10-15 reps
+Execution note: Meta 10-15 reps
 ```
 
 ## Files

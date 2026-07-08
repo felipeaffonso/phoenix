@@ -15,7 +15,7 @@ Design:
 
 **Portuguese:** Supino na máquina / Chest press
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -24,7 +24,7 @@ Design:
 | Target reps | 8-12 |
 | Rest | 90s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 8–12 reps
@@ -49,7 +49,7 @@ Phoenix Tips:
 
 **Portuguese:** Remada sentada no cabo
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -58,7 +58,7 @@ Phoenix Tips:
 | Target reps | 10-12 |
 | Rest | 90s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 10–12 reps
@@ -80,7 +80,7 @@ Phoenix Tips:
 
 **Portuguese:** Supino inclinado na máquina
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -89,7 +89,7 @@ Phoenix Tips:
 | Target reps | 8-12 |
 | Rest | 90s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 8–12 reps
@@ -111,7 +111,7 @@ Phoenix Tips:
 
 **Portuguese:** Puxada alta aberta
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -120,7 +120,7 @@ Phoenix Tips:
 | Target reps | 10-12 |
 | Rest | 90s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 10–12 reps
@@ -142,7 +142,7 @@ Phoenix Tips:
 
 **Portuguese:** Elevação lateral na máquina
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -151,7 +151,7 @@ Phoenix Tips:
 | Target reps | 12-15 |
 | Rest | 60s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 12–15 reps
@@ -173,7 +173,7 @@ Phoenix Tips:
 
 **Portuguese:** Tríceps na polia com barra reta
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -182,7 +182,7 @@ Phoenix Tips:
 | Target reps | 10-15 |
 | Rest | 60s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 10–15 reps

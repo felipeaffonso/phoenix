@@ -2,6 +2,9 @@
 
 Nutrition documentation for Phoenix.
 
+Nutrition is a product backlog domain after the MVP defined in
+`PHOENIX_CONSTITUTION.md`.
+
 Important principle:
 
 > Marcia defines the nutrition plan. Phoenix documents execution and helps organize adherence.

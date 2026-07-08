@@ -48,11 +48,11 @@ Avoid HIIT for now.
 - Shoulder work must stay pain-free.
 - Lumbar discomfort overrides the plan.
 
-## Strong template principle
+## Phoenix template principle
 
-Each Strong exercise receives:
+Each Phoenix workout exercise receives:
 
-- Strong exercise name
+- exercise name
 - minimum template reps
 - rest time
-- Sticky Note with real rep range, progression and execution tips
+- execution note with real rep range, progression and execution tips

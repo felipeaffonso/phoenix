@@ -6,9 +6,9 @@ Shoulder-safe session focused on delts, biceps and triceps.
 
 Portuguese: Desenvolvimento máquina
 
-Strong Template: 3 sets, 8 reps, target 8-12, rest 90s.
+Phoenix Template: 3 sets, 8 reps, target 8-12, rest 90s.
 
-Sticky Note:
+Execution Note:
 
 ```text
 🎯 Meta: 8–12 reps
@@ -28,9 +28,9 @@ Phoenix Tips:
 
 Portuguese: Elevação lateral máquina
 
-Strong Template: 4 sets, 12 reps, target 12-15, rest 60s.
+Phoenix Template: 4 sets, 12 reps, target 12-15, rest 60s.
 
-Sticky Note:
+Execution Note:
 
 ```text
 🎯 Meta: 12–15 reps
@@ -50,9 +50,9 @@ Phoenix Tips:
 
 Portuguese: Crucifixo inverso máquina
 
-Strong Template: 3 sets, 12 reps, target 12-15, rest 60s.
+Phoenix Template: 3 sets, 12 reps, target 12-15, rest 60s.
 
-Sticky Note:
+Execution Note:
 
 ```text
 🎯 Meta: 12–15 reps
@@ -72,9 +72,9 @@ Phoenix Tips:
 
 Portuguese: Rosca Scott máquina
 
-Strong Template: 3 sets, 10 reps, target 10-15, rest 60s.
+Phoenix Template: 3 sets, 10 reps, target 10-15, rest 60s.
 
-Sticky Note:
+Execution Note:
 
 ```text
 🎯 Meta: 10–15 reps
@@ -94,9 +94,9 @@ Phoenix Tips:
 
 Portuguese: Rosca martelo com halteres
 
-Strong Template: 3 sets, 10 reps, target 10-12, rest 60s.
+Phoenix Template: 3 sets, 10 reps, target 10-12, rest 60s.
 
-Sticky Note:
+Execution Note:
 
 ```text
 🎯 Meta: 10–12 reps
@@ -116,9 +116,9 @@ Phoenix Tips:
 
 Portuguese: Extensão de tríceps no cabo
 
-Strong Template: 3 sets, 10 reps, target 10-15, rest 60s.
+Phoenix Template: 3 sets, 10 reps, target 10-15, rest 60s.
 
-Sticky Note:
+Execution Note:
 
 ```text
 🎯 Meta: 10–15 reps
@@ -138,9 +138,9 @@ Phoenix Tips:
 
 Portuguese: Tríceps polia barra reta
 
-Strong Template: 2 sets, 12 reps, target 12-15, rest 60s.
+Phoenix Template: 2 sets, 12 reps, target 12-15, rest 60s.
 
-Sticky Note:
+Execution Note:
 
 ```text
 🎯 Meta: 12–15 reps

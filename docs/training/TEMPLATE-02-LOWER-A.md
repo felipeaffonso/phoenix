@@ -23,7 +23,7 @@ Avoid:
 
 **Portuguese:** Cadeira extensora
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -32,7 +32,7 @@ Avoid:
 | Target reps | 10-15 |
 | Rest | 60s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 10–15 reps
@@ -56,7 +56,7 @@ Phoenix Tips:
 
 **Portuguese:** Mesa flexora sentada
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -65,7 +65,7 @@ Phoenix Tips:
 | Target reps | 10-15 |
 | Rest | 60s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 10–15 reps
@@ -90,7 +90,7 @@ Phoenix Tips:
 
 **Portuguese:** Elevação pélvica / Hip Thrust
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -99,7 +99,7 @@ Phoenix Tips:
 | Target reps | 10-15 |
 | Rest | 90s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 10–15 reps
@@ -124,7 +124,7 @@ Phoenix Tips:
 
 **Portuguese:** Afundo búlgaro
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -133,7 +133,7 @@ Phoenix Tips:
 | Target reps | 10-15 por perna |
 | Rest | 90s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 10–15 reps por perna
@@ -159,7 +159,7 @@ Phoenix Tips:
 
 **Portuguese:** Panturrilha em pé
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -168,7 +168,7 @@ Phoenix Tips:
 | Target reps | 12-20 |
 | Rest | 45s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 12–20 reps
@@ -190,7 +190,7 @@ Phoenix Tips:
 
 **Portuguese:** Abdominal no cabo
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
@@ -199,7 +199,7 @@ Phoenix Tips:
 | Target reps | 12-20 |
 | Rest | 45s |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Meta: 12–20 reps
@@ -219,14 +219,14 @@ Phoenix Tips:
 
 ## Cardio
 
-**Strong Template**
+**Phoenix Template**
 
 | Setting | Value |
 |---|---:|
 | Duration | 20-25 min |
 | Intensity | Zone 2 |
 
-**Sticky Note**
+**Execution Note**
 
 ```text
 🎯 Zona 2
