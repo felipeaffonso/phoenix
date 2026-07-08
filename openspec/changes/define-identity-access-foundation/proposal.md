@@ -32,8 +32,8 @@ who the user is and what they are allowed to do.
 - `user-profiles`: User identity, profile fields, active status and
   administrative user creation.
 - `authorization`: Roles, permissions and enforcement for MVP behavior.
-- `admin-exercise-management`: Administrative creation, editing and
-  deactivation of exercises.
+- `admin-exercise-management`: Administrative surface for the MVP Exercise
+  Library, covering creation, editing and deactivation of exercises.
 
 ### Modified Capabilities
 
@@ -45,7 +45,7 @@ who the user is and what they are allowed to do.
   `implement-exercise-library`.
 - Defines the minimum roles needed for early MVP: `ADMIN` and `ATHLETE`.
 - Clarifies that exercise read behavior and exercise admin behavior are
-  separate concerns.
+  separate concerns inside the Exercise Library capability.
 - May affect future backend packages, API routes and frontend admin navigation.
 - Adds no new external dependencies at planning time.
 

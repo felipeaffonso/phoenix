@@ -5,6 +5,9 @@
 Define administrative behavior for creating, editing and deactivating exercises
 in the Phoenix exercise catalog.
 
+This is an administrative surface for the MVP Exercise Library capability, not
+a separate MVP module.
+
 ## Requirements
 
 ### Requirement: Exercise administration surface

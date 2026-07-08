@@ -32,6 +32,20 @@ Phoenix SHALL be built as a modular monolith backend.
 - **THEN** it SHALL be placed in a module package with a clear boundary and
   documented ownership
 
+### Requirement: Application security stack
+Phoenix SHALL use Spring Security for application authentication and
+authorization.
+
+#### Scenario: Security implementation
+- **WHEN** authentication, authorization or protected endpoint behavior is
+  implemented
+- **THEN** it SHALL use Spring Security-compatible mechanisms
+
+#### Scenario: Security framework replacement
+- **WHEN** a change would replace Spring Security with another security
+  framework or custom security layer
+- **THEN** an ADR SHALL be created and accepted before implementation
+
 ### Requirement: Persistence stack
 Phoenix SHALL use PostgreSQL as the primary relational database.
 
@@ -57,7 +71,8 @@ Phoenix SHALL require an ADR for architecture changes.
 
 #### Scenario: Official technology replacement
 - **WHEN** a change would replace Java 25, Spring Boot 4.x, Spring Modulith,
-  Spring Data JDBC, PostgreSQL, Redis, Next.js or PWA-first architecture
+  Spring Data JDBC, Spring Security, PostgreSQL, Redis, Next.js or PWA-first
+  architecture
 - **THEN** an ADR SHALL be created and accepted before implementation
 
 #### Scenario: New architectural dependency

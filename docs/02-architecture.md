@@ -6,6 +6,7 @@ authority for architecture decisions in this repository.
 Relevant ADRs:
 
 - [`docs/adr/0001-record-application-architecture.md`](adr/0001-record-application-architecture.md)
+- [`docs/adr/0002-use-spring-security-for-application-security.md`](adr/0002-use-spring-security-for-application-security.md)
 
 Relevant OpenSpec specs:
 
@@ -51,6 +52,7 @@ Web Frontend
 - Spring Boot 4.x
 - Spring Modulith
 - Spring Data JDBC
+- Spring Security
 - PostgreSQL
 - Redis
 

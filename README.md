@@ -141,6 +141,8 @@ This repository is for the product, knowledge base and future application code.
 ## Development
 
 The backend scaffold is a Java 25 / Spring Boot 4.x Maven application.
+Application authentication and authorization use Spring Security, as recorded
+in `docs/adr/0002-use-spring-security-for-application-security.md`.
 
 Before implementing a behavior, schema, API, product-scope or architecture
 change:

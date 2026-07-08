@@ -24,7 +24,7 @@ The MVP includes only:
 1. Authentication
 2. User profiles
 3. Authorization and permissions
-4. Admin exercise management
+4. Exercise Library administrative surface
 5. Exercise library
 6. Workout templates
 7. Workout player
@@ -50,7 +50,7 @@ Status by MVP feature:
 | Authentication | Done: `openspec/specs/authentication/spec.md` | Done: `openspec/changes/define-identity-access-foundation/proposal.md` | Done: design, delta spec and tasks in `openspec/changes/define-identity-access-foundation/` | Not started | Not started |
 | User profiles | Done: `openspec/specs/user-profiles/spec.md` | Done: `openspec/changes/define-identity-access-foundation/proposal.md` | Done: design, delta spec and tasks in `openspec/changes/define-identity-access-foundation/` | Not started | Not started |
 | Authorization and permissions | Done: `openspec/specs/authorization/spec.md` | Done: `openspec/changes/define-identity-access-foundation/proposal.md` | Done: design, delta spec and tasks in `openspec/changes/define-identity-access-foundation/` | Not started | Not started |
-| Admin exercise management | Done: `openspec/specs/admin-exercise-management/spec.md` | Done: `openspec/changes/define-identity-access-foundation/proposal.md` | Done: design, delta spec and tasks in `openspec/changes/define-identity-access-foundation/` | Not started | Not started |
+| Exercise Library admin surface | Done: `openspec/specs/admin-exercise-management/spec.md` | Done: `openspec/changes/define-identity-access-foundation/proposal.md` | Done: design, delta spec and tasks in `openspec/changes/define-identity-access-foundation/` | Not started | Not started |
 | Exercise library | Done: `openspec/specs/exercise-library/spec.md` | Done: `openspec/changes/implement-exercise-library/proposal.md` | Done, blocked by identity/access planning | Not started | Not started |
 | Workout templates | Not started | Done: `openspec/changes/define-workout-templates/proposal.md` | Not started | Not started | Not started |
 | Workout player | Not started | Done: `openspec/changes/define-workout-player/proposal.md` | Not started | Not started | Not started |
@@ -79,7 +79,7 @@ Current readiness:
 | Authentication | Planning complete; implementation not started | `openspec/specs/authentication/spec.md` and `openspec/changes/define-identity-access-foundation/` |
 | User profiles | Planning complete; implementation not started | `openspec/specs/user-profiles/spec.md` and `openspec/changes/define-identity-access-foundation/` |
 | Authorization and permissions | Planning complete; implementation not started | `openspec/specs/authorization/spec.md` and `openspec/changes/define-identity-access-foundation/` |
-| Admin exercise management | Planning complete; implementation not started | `openspec/specs/admin-exercise-management/spec.md` and `openspec/changes/define-identity-access-foundation/` |
+| Exercise Library admin surface | Planning complete; implementation not started | `openspec/specs/admin-exercise-management/spec.md` and `openspec/changes/define-identity-access-foundation/` |
 | Exercise library | Planned, but should wait for identity/access foundation | `EXERCISE_LIBRARY.md` and `openspec/specs/exercise-library/spec.md` |
 | Workout templates | Proposal complete; planning not started | `WORKOUT_TEMPLATES.md` and `openspec/changes/define-workout-templates/` |
 | Workout player | Proposal complete; planning not started | `openspec/changes/define-workout-player/` |
