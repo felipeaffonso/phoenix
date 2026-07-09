@@ -47,11 +47,11 @@ Status by MVP feature:
 
 | Feature | Main Spec | Proposal | Planning | Implementation | Archive |
 |---|---|---|---|---|---|
-| Authentication | Done: `openspec/specs/authentication/spec.md` | Done: `openspec/changes/define-identity-access-foundation/proposal.md` | Done: design, delta spec and tasks in `openspec/changes/define-identity-access-foundation/` | Not started | Not started |
-| User profiles | Done: `openspec/specs/user-profiles/spec.md` | Done: `openspec/changes/define-identity-access-foundation/proposal.md` | Done: design, delta spec and tasks in `openspec/changes/define-identity-access-foundation/` | Not started | Not started |
-| Authorization and permissions | Done: `openspec/specs/authorization/spec.md` | Done: `openspec/changes/define-identity-access-foundation/proposal.md` | Done: design, delta spec and tasks in `openspec/changes/define-identity-access-foundation/` | Not started | Not started |
-| Exercise Library admin surface | Done: `openspec/specs/admin-exercise-management/spec.md` | Done: `openspec/changes/define-identity-access-foundation/proposal.md` | Done: design, delta spec and tasks in `openspec/changes/define-identity-access-foundation/` | Not started | Not started |
-| Exercise library | Done: `openspec/specs/exercise-library/spec.md` | Done: `openspec/changes/implement-exercise-library/proposal.md` | Done, blocked by identity/access planning | Not started | Not started |
+| Authentication | Done: `openspec/specs/authentication/spec.md` | Done: `openspec/changes/define-identity-access-foundation/proposal.md` | Artifacts valid; decisions still open in `openspec/changes/define-identity-access-foundation/` | Not started | Not started |
+| User profiles | Done: `openspec/specs/user-profiles/spec.md` | Done: `openspec/changes/define-identity-access-foundation/proposal.md` | Artifacts valid; decisions still open in `openspec/changes/define-identity-access-foundation/` | Not started | Not started |
+| Authorization and permissions | Done: `openspec/specs/authorization/spec.md` | Done: `openspec/changes/define-identity-access-foundation/proposal.md` | Artifacts valid; decisions still open in `openspec/changes/define-identity-access-foundation/` | Not started | Not started |
+| Exercise Library admin surface | Done: `openspec/specs/admin-exercise-management/spec.md` | Done: `openspec/changes/define-identity-access-foundation/proposal.md` | Artifacts valid; decisions still open in `openspec/changes/define-identity-access-foundation/` | Not started | Not started |
+| Exercise library | Done: `openspec/specs/exercise-library/spec.md` | Done: `openspec/changes/implement-exercise-library/proposal.md` | Artifacts valid; waits for accepted identity/access planning | Not started | Not started |
 | Workout templates | Not started | Done: `openspec/changes/define-workout-templates/proposal.md` | Not started | Not started | Not started |
 | Workout player | Not started | Done: `openspec/changes/define-workout-player/proposal.md` | Not started | Not started | Not started |
 | Workout history | Not started | Done: `openspec/changes/define-workout-history/proposal.md` | Not started | Not started | Not started |
@@ -76,11 +76,11 @@ Current readiness:
 
 | Module | Status | Source |
 |---|---|---|
-| Authentication | Planning complete; implementation not started | `openspec/specs/authentication/spec.md` and `openspec/changes/define-identity-access-foundation/` |
-| User profiles | Planning complete; implementation not started | `openspec/specs/user-profiles/spec.md` and `openspec/changes/define-identity-access-foundation/` |
-| Authorization and permissions | Planning complete; implementation not started | `openspec/specs/authorization/spec.md` and `openspec/changes/define-identity-access-foundation/` |
-| Exercise Library admin surface | Planning complete; implementation not started | `openspec/specs/admin-exercise-management/spec.md` and `openspec/changes/define-identity-access-foundation/` |
-| Exercise library | Planned, but should wait for identity/access foundation | `EXERCISE_LIBRARY.md` and `openspec/specs/exercise-library/spec.md` |
+| Authentication | Spec and change artifacts valid; implementation planning still has open decisions | `openspec/specs/authentication/spec.md` and `openspec/changes/define-identity-access-foundation/` |
+| User profiles | Spec and change artifacts valid; implementation planning still has open decisions | `openspec/specs/user-profiles/spec.md` and `openspec/changes/define-identity-access-foundation/` |
+| Authorization and permissions | Spec and change artifacts valid; implementation planning still has open decisions | `openspec/specs/authorization/spec.md` and `openspec/changes/define-identity-access-foundation/` |
+| Exercise Library admin surface | Spec and change artifacts valid; implementation planning still has open decisions | `openspec/specs/admin-exercise-management/spec.md` and `openspec/changes/define-identity-access-foundation/` |
+| Exercise library | Planned and valid, but should wait for accepted identity/access planning | `EXERCISE_LIBRARY.md` and `openspec/specs/exercise-library/spec.md` |
 | Workout templates | Proposal complete; planning not started | `WORKOUT_TEMPLATES.md` and `openspec/changes/define-workout-templates/` |
 | Workout player | Proposal complete; planning not started | `openspec/changes/define-workout-player/` |
 | Workout history | Proposal complete; planning not started | `openspec/changes/define-workout-history/` |
