@@ -3,7 +3,8 @@
 ## Purpose
 
 Define the MVP exercise library capability used by workout templates and workout
-execution.
+execution, including global catalog exercises and athlete-owned private
+exercises.
 
 ## Requirements
 
@@ -18,7 +19,8 @@ module.
 #### Scenario: Module ownership
 - **WHEN** exercise library behavior is implemented
 - **THEN** the module SHALL own the exercise domain model, repository,
-  database table, read API and initial seed data
+  database table, ownership rules, read API, private exercise write API and
+  initial seed data
 
 #### Scenario: Out-of-bound behavior
 - **WHEN** workout-template-specific sets, reps, rest times, execution notes or
@@ -41,13 +43,37 @@ Phoenix SHALL identify exercises with stable UUIDs.
 - **WHEN** exercise data is returned by the API
 - **THEN** the response SHALL expose the UUID as `id`
 
+### Requirement: Exercise ownership and visibility
+Phoenix SHALL support global exercises and athlete-owned private exercises in
+the Exercise Library.
+
+#### Scenario: Global exercise
+- **WHEN** an exercise belongs to the canonical catalog
+- **THEN** it SHALL have `scope` set to `GLOBAL` and no `ownerUserId`
+
+#### Scenario: Private exercise
+- **WHEN** an `ATHLETE` creates an exercise for their own use
+- **THEN** it SHALL have `scope` set to `USER` and `ownerUserId` set to that
+  user's stable UUID
+
+#### Scenario: Private exercise visibility
+- **WHEN** an authenticated user lists available exercises
+- **THEN** the system SHALL include global exercises and private exercises owned
+  by that user, and SHALL NOT include private exercises owned by other users
+
+#### Scenario: No MVP promotion flow
+- **WHEN** an athlete-owned private exercise exists
+- **THEN** the MVP SHALL NOT provide a workflow to promote it into the global
+  catalog
+
 ### Requirement: Exercise domain fields
 Phoenix SHALL store the documented exercise domain fields.
 
 #### Scenario: Exercise record
 - **WHEN** an exercise record is persisted
-- **THEN** it SHALL include `id`, `name`, `namePt`, `movementPattern`,
-  `bodyArea`, `equipmentType`, `defaultSafetyNotes` and `active`
+- **THEN** it SHALL include `id`, `scope`, `ownerUserId`, `name`, `namePt`,
+  `movementPattern`, `bodyArea`, `equipmentType`, `defaultSafetyNotes` and
+  `active`
 
 #### Scenario: Required names
 - **WHEN** an exercise record is persisted
@@ -86,35 +112,45 @@ Phoenix SHALL persist exercises in a PostgreSQL table named `exercises`.
 
 #### Scenario: Table structure
 - **WHEN** the exercise schema is created
-- **THEN** it SHALL include columns `id uuid`, `name varchar(120)`,
-  `name_pt varchar(160)`, `movement_pattern varchar(60)`,
-  `body_area varchar(60)`, `equipment_type varchar(60)`,
-  `default_safety_notes text`, `active boolean`, `created_at timestamptz` and
-  `updated_at timestamptz`
+- **THEN** it SHALL include columns `id uuid`, `scope varchar(20)`,
+  `owner_user_id uuid`, `name varchar(120)`, `name_pt varchar(160)`,
+  `movement_pattern varchar(60)`, `body_area varchar(60)`,
+  `equipment_type varchar(60)`, `default_safety_notes text`, `active boolean`,
+  `created_at timestamptz` and `updated_at timestamptz`
 
 #### Scenario: Required constraints
 - **WHEN** the exercise schema is created
-- **THEN** `id`, `name`, `name_pt`, `movement_pattern`, `body_area`,
+- **THEN** `id`, `scope`, `name`, `name_pt`, `movement_pattern`, `body_area`,
   `equipment_type`, `active`, `created_at` and `updated_at` SHALL be non-null
 
-#### Scenario: Name uniqueness
+#### Scenario: Ownership constraints
 - **WHEN** the exercise schema is created
-- **THEN** it SHALL enforce unique canonical exercise names ignoring case via
-  `lower(name)`
+- **THEN** it SHALL require `owner_user_id` to be null for `GLOBAL` exercises
+  and non-null for `USER` exercises
+
+#### Scenario: Global name uniqueness
+- **WHEN** the exercise schema is created
+- **THEN** it SHALL enforce unique global exercise names ignoring case via
+  `lower(name)` for records with `scope = 'GLOBAL'`
+
+#### Scenario: Private name uniqueness
+- **WHEN** the exercise schema is created
+- **THEN** it SHALL enforce unique private exercise names ignoring case per
+  `owner_user_id`
 
 #### Scenario: Query indexes
 - **WHEN** the exercise schema is created
-- **THEN** it SHALL include indexes for `active`, `movement_pattern` and
-  `body_area`
+- **THEN** it SHALL include indexes for `scope`, `owner_user_id`, `active`,
+  `movement_pattern` and `body_area`
 
 ### Requirement: Exercise read API
 Phoenix SHALL expose a read-only exercise API for the initial implementation.
 
 #### Scenario: List exercises
 - **WHEN** a client requests `GET /api/exercises`
-- **THEN** the API SHALL return exercise records with `id`, `name`, `namePt`,
-  `movementPattern`, `bodyArea`, `equipmentType`, `defaultSafetyNotes` and
-  `active`
+- **THEN** the API SHALL return exercise records with `id`, `scope`,
+  `ownerUserId`, `name`, `namePt`, `movementPattern`, `bodyArea`,
+  `equipmentType`, `defaultSafetyNotes` and `active`
 
 #### Scenario: Default active filter
 - **WHEN** a client requests `GET /api/exercises` without an `active` query
@@ -122,7 +158,7 @@ Phoenix SHALL expose a read-only exercise API for the initial implementation.
 - **THEN** the API SHALL return active exercises by default
 
 #### Scenario: Optional filters
-- **WHEN** a client requests `GET /api/exercises` with `active`,
+- **WHEN** a client requests `GET /api/exercises` with `active`, `scope`,
   `movementPattern`, `bodyArea` or `equipmentType`
 - **THEN** the API SHALL filter results by the supplied valid parameters
 
@@ -133,6 +169,45 @@ Phoenix SHALL expose a read-only exercise API for the initial implementation.
 #### Scenario: Exercise not found
 - **WHEN** a client requests `GET /api/exercises/{id}` for a missing exercise
 - **THEN** the API SHALL return `404`
+
+#### Scenario: Private exercise not visible to another user
+- **WHEN** a client requests `GET /api/exercises/{id}` for a private exercise
+  owned by another user
+- **THEN** the API SHALL return `404` or another non-disclosing rejection
+
+### Requirement: Private exercise write API
+Phoenix SHALL allow authenticated athletes to create, edit and deactivate their
+own private exercises.
+
+#### Scenario: Create private exercise
+- **WHEN** an authenticated `ATHLETE` submits a valid private exercise request
+- **THEN** the API SHALL create an active exercise with `scope` set to `USER`
+  and `ownerUserId` set to the authenticated user's UUID
+
+#### Scenario: Friendly private exercise creation contract
+- **WHEN** an authenticated `ATHLETE` creates a private exercise
+- **THEN** the API contract SHALL support a user-friendly form with required
+  `name`, `movementPattern`, `bodyArea` and `equipmentType`, and optional
+  `namePt` and `defaultSafetyNotes`
+
+#### Scenario: Private Portuguese name default
+- **WHEN** an authenticated `ATHLETE` creates a private exercise without
+  `namePt`
+- **THEN** the system SHALL store the submitted `name` as `namePt`
+
+#### Scenario: Edit own private exercise
+- **WHEN** an authenticated user submits valid changes for a private exercise
+  they own
+- **THEN** the API SHALL save the changes and update `updated_at`
+
+#### Scenario: Deactivate own private exercise
+- **WHEN** an authenticated user deactivates a private exercise they own
+- **THEN** the API SHALL mark the exercise inactive without deleting it
+
+#### Scenario: Cannot write another user's private exercise
+- **WHEN** an authenticated user attempts to edit or deactivate another user's
+  private exercise
+- **THEN** the system SHALL reject the action
 
 ### Requirement: Exercise seed data
 Phoenix SHALL include initial exercise seed data in the product repository.

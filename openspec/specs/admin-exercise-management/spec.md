@@ -2,8 +2,8 @@
 
 ## Purpose
 
-Define administrative behavior for creating, editing and deactivating exercises
-in the Phoenix exercise catalog.
+Define administrative behavior for creating, editing and deactivating global
+exercises in the Phoenix exercise catalog.
 
 This is an administrative surface for the MVP Exercise Library capability, not
 a separate MVP module.
@@ -11,13 +11,13 @@ a separate MVP module.
 ## Requirements
 
 ### Requirement: Exercise administration surface
-Phoenix SHALL provide an administrative surface for managing the exercise
-catalog.
+Phoenix SHALL provide an administrative surface for managing the global
+exercise catalog.
 
 #### Scenario: Admin access
 - **WHEN** an `ADMIN` user opens exercise administration
 - **THEN** the system SHALL provide access to create, edit and deactivate
-  exercises
+  global exercises
 
 #### Scenario: Non-admin access
 - **WHEN** a user without exercise-management permission opens exercise
@@ -25,11 +25,11 @@ catalog.
 - **THEN** the system SHALL deny access
 
 ### Requirement: Exercise creation
-Phoenix SHALL allow authorized administrators to create exercises.
+Phoenix SHALL allow authorized administrators to create global exercises.
 
 #### Scenario: Valid exercise creation
 - **WHEN** an `ADMIN` user submits a valid new exercise
-- **THEN** the system SHALL create an active exercise with a stable UUID
+- **THEN** the system SHALL create an active global exercise with a stable UUID
 
 #### Scenario: Duplicate exercise name
 - **WHEN** an `ADMIN` user submits an exercise name that already exists
@@ -37,7 +37,7 @@ Phoenix SHALL allow authorized administrators to create exercises.
 - **THEN** the system SHALL reject the request
 
 ### Requirement: Exercise editing
-Phoenix SHALL allow authorized administrators to edit exercise metadata.
+Phoenix SHALL allow authorized administrators to edit global exercise metadata.
 
 #### Scenario: Valid exercise edit
 - **WHEN** an `ADMIN` user edits exercise name, Portuguese name,
@@ -49,7 +49,7 @@ Phoenix SHALL allow authorized administrators to edit exercise metadata.
 - **THEN** the system SHALL reject the request
 
 ### Requirement: Exercise deactivation
-Phoenix SHALL deactivate exercises instead of deleting them when they may be
+Phoenix SHALL deactivate global exercises instead of deleting them when they may be
 referenced by templates or history.
 
 #### Scenario: Deactivate exercise
@@ -71,3 +71,16 @@ Phoenix SHALL track basic timestamps for exercise management.
 #### Scenario: Update timestamp
 - **WHEN** an exercise is edited or deactivated
 - **THEN** the system SHALL update `updated_at`
+
+### Requirement: Private exercise separation
+Phoenix SHALL keep athlete-owned private exercise management separate from the
+administrative global catalog surface.
+
+#### Scenario: Admin surface excludes private exercises by default
+- **WHEN** an `ADMIN` user opens exercise administration
+- **THEN** the system SHALL show and manage global catalog exercises by default
+
+#### Scenario: Athlete private exercise ownership
+- **WHEN** an `ATHLETE` user creates, edits or deactivates a private exercise
+- **THEN** that behavior SHALL be governed by owner permissions, not by the
+  global exercise administration surface

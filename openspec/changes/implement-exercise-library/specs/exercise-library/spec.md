@@ -11,7 +11,8 @@ module.
 #### Scenario: Module ownership
 - **WHEN** exercise library behavior is implemented
 - **THEN** the module SHALL own the exercise domain model, repository,
-  database table, read API and initial seed data
+  database table, ownership rules, read API, private exercise write API and
+  initial seed data
 
 #### Scenario: Out-of-bound behavior
 - **WHEN** workout-template-specific sets, reps, rest times, execution notes or
@@ -28,26 +29,36 @@ Phoenix SHALL persist exercises in a PostgreSQL table named `exercises`.
 
 #### Scenario: Table structure
 - **WHEN** the exercise schema is created
-- **THEN** it SHALL include columns `id uuid`, `name varchar(120)`,
-  `name_pt varchar(160)`, `movement_pattern varchar(60)`,
-  `body_area varchar(60)`, `equipment_type varchar(60)`,
-  `default_safety_notes text`, `active boolean`, `created_at timestamptz` and
-  `updated_at timestamptz`
+- **THEN** it SHALL include columns `id uuid`, `scope varchar(20)`,
+  `owner_user_id uuid`, `name varchar(120)`, `name_pt varchar(160)`,
+  `movement_pattern varchar(60)`, `body_area varchar(60)`,
+  `equipment_type varchar(60)`, `default_safety_notes text`, `active boolean`,
+  `created_at timestamptz` and `updated_at timestamptz`
 
 #### Scenario: Required constraints
 - **WHEN** the exercise schema is created
-- **THEN** `id`, `name`, `name_pt`, `movement_pattern`, `body_area`,
+- **THEN** `id`, `scope`, `name`, `name_pt`, `movement_pattern`, `body_area`,
   `equipment_type`, `active`, `created_at` and `updated_at` SHALL be non-null
 
-#### Scenario: Name uniqueness
+#### Scenario: Ownership constraints
 - **WHEN** the exercise schema is created
-- **THEN** it SHALL enforce unique canonical exercise names ignoring case via
-  `lower(name)`
+- **THEN** it SHALL require `owner_user_id` to be null for `GLOBAL` exercises
+  and non-null for `USER` exercises
+
+#### Scenario: Global name uniqueness
+- **WHEN** the exercise schema is created
+- **THEN** it SHALL enforce unique global exercise names ignoring case via
+  `lower(name)` for records with `scope = 'GLOBAL'`
+
+#### Scenario: Private name uniqueness
+- **WHEN** the exercise schema is created
+- **THEN** it SHALL enforce unique private exercise names ignoring case per
+  `owner_user_id`
 
 #### Scenario: Query indexes
 - **WHEN** the exercise schema is created
-- **THEN** it SHALL include indexes for `active`, `movement_pattern` and
-  `body_area`
+- **THEN** it SHALL include indexes for `scope`, `owner_user_id`, `active`,
+  `movement_pattern` and `body_area`
 
 #### Scenario: Schema lives in product repository
 - **WHEN** the exercise schema is implemented
@@ -58,9 +69,9 @@ Phoenix SHALL expose a read-only exercise API for the initial implementation.
 
 #### Scenario: List exercises
 - **WHEN** a client requests `GET /api/exercises`
-- **THEN** the API SHALL return exercise records with `id`, `name`, `namePt`,
-  `movementPattern`, `bodyArea`, `equipmentType`, `defaultSafetyNotes` and
-  `active`
+- **THEN** the API SHALL return exercise records with `id`, `scope`,
+  `ownerUserId`, `name`, `namePt`, `movementPattern`, `bodyArea`,
+  `equipmentType`, `defaultSafetyNotes` and `active`
 
 #### Scenario: Default active filter
 - **WHEN** a client requests `GET /api/exercises` without an `active` query
@@ -68,7 +79,7 @@ Phoenix SHALL expose a read-only exercise API for the initial implementation.
 - **THEN** the API SHALL return active exercises by default
 
 #### Scenario: Optional filters
-- **WHEN** a client requests `GET /api/exercises` with `active`,
+- **WHEN** a client requests `GET /api/exercises` with `active`, `scope`,
   `movementPattern`, `bodyArea` or `equipmentType`
 - **THEN** the API SHALL filter results by the supplied valid parameters
 
@@ -80,9 +91,10 @@ Phoenix SHALL expose a read-only exercise API for the initial implementation.
 - **WHEN** a client requests `GET /api/exercises/{id}` for a missing exercise
 - **THEN** the API SHALL return `404`
 
-#### Scenario: No write endpoints
+#### Scenario: No global write endpoints
 - **WHEN** the initial exercise API is implemented
-- **THEN** it SHALL NOT expose create, update or delete endpoints
+- **THEN** it SHALL NOT expose global exercise create, update or delete
+  endpoints
 
 ### Requirement: Exercise seed data
 Phoenix SHALL include initial exercise seed data in the product repository.

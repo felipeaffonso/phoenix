@@ -56,15 +56,26 @@ protected actions require permissions.
 Alternative considered: hard-code `ADMIN` checks everywhere. That is fast but
 creates friction when permissions expand.
 
-### Treat Exercise Administration Separately From Exercise Read API
+### Treat Global Exercise Administration Separately From Exercise Read API
 
 Exercise read behavior can support workout-template building and player flows.
-Creating, editing and deactivating exercises belongs to admin exercise
-management and requires authorization.
+Creating, editing and deactivating global catalog exercises belongs to admin
+exercise management and requires authorization.
 
-Alternative considered: include write endpoints in the first exercise-library
-implementation. That would force permission decisions into the exercise module
-before the access foundation is ready.
+Alternative considered: include all write endpoints in the first
+exercise-library implementation. That would force permission decisions into the
+exercise module before the access foundation is ready.
+
+### Allow Athlete-Owned Private Exercises
+
+`ATHLETE` users can create, edit and deactivate their own private exercises for
+cases the global catalog does not cover. Private exercises are visible to and
+usable by their owner, but they are not visible to other athletes and are not
+promoted into the global catalog during the MVP.
+
+Alternative considered: make exercise creation admin-only. That keeps the
+catalog cleaner but blocks real workout execution when a user's exercise is not
+present in the global catalog.
 
 ## Risks / Trade-offs
 
@@ -75,7 +86,9 @@ before the access foundation is ready.
 - Role-based authorization can become coarse -> Use permissions behind roles so
   future refinement is possible.
 - Admin UI requirements may expand quickly -> Keep this planning focused on
-  MVP user and exercise administration only.
+  MVP user and global exercise administration only.
+- Private exercise creation can create duplicate or inconsistent names -> Scope
+  names by owner and keep private exercises out of the global catalog.
 
 ## Open Questions
 
@@ -83,5 +96,3 @@ before the access foundation is ready.
   Spring Security-supported approach?
 - Should the first admin user be seeded, created by command, or created through
   a protected bootstrap flow?
-- Should normal `ATHLETE` users ever create private custom exercises, or is
-  exercise creation admin-only for the MVP?

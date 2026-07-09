@@ -24,7 +24,7 @@ the proposal, delta spec, design and tasks are accepted.
 
 - No workout-template module.
 - No workout player, history or progression engine.
-- No user-owned custom exercise CRUD.
+- No global exercise administration UI or admin write API.
 - No authentication flow design beyond using the existing Spring Security
   scaffold.
 - No Redis usage.
@@ -58,14 +58,16 @@ workout templates can reference exercises without churn.
 Alternative considered: database-generated numeric IDs. That makes seeded
 references less portable and exposes implementation details to API clients.
 
-### Keep API Read-Only for Initial Implementation
+### Keep Global Catalog Writes Out Of The Initial Read API
 
-The first implementation exposes `GET /api/exercises` and
-`GET /api/exercises/{id}` only.
+The first implementation exposes exercise reads for global and owner-visible
+private exercises. Athlete-owned private exercise write contracts are documented
+in the Exercise Library spec, but global catalog writes remain separate admin
+behavior.
 
-Alternative considered: implement full CRUD immediately. CRUD requires product
-decisions about user-owned custom exercises, permissions and audit behavior
-that are not yet documented.
+Alternative considered: implement global CRUD immediately. Global CRUD requires
+admin permissions, audit behavior and admin surfaces that belong to the
+identity/access foundation and admin exercise management planning.
 
 ### Keep Seed Data in the Product Repository
 
@@ -108,3 +110,5 @@ schema and seed files from the branch.
   behavior is fully tested.
 - Should API endpoints be temporarily accessible during early MVP development,
   or protected immediately by authentication once auth is specified?
+- Should private exercise write endpoints be implemented in the same increment
+  as the read API or in the next exercise-management increment?

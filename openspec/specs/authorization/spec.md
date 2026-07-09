@@ -32,15 +32,30 @@ Phoenix SHALL define MVP roles for administration and normal application use.
   to normal users
 
 ### Requirement: Exercise catalog permissions
-Phoenix SHALL protect exercise catalog write actions with administrative
-permissions.
+Phoenix SHALL protect global exercise catalog write actions with administrative
+permissions and private exercise write actions with ownership permissions.
 
-#### Scenario: Admin manages exercises
-- **WHEN** an `ADMIN` user creates, edits or deactivates an exercise
+#### Scenario: Admin manages global exercises
+- **WHEN** an `ADMIN` user creates, edits or deactivates a global exercise
 - **THEN** the system SHALL allow the action if validation passes
 
-#### Scenario: Athlete cannot manage exercises
-- **WHEN** an `ATHLETE` user attempts to create, edit or deactivate an exercise
+#### Scenario: Athlete creates a private exercise
+- **WHEN** an `ATHLETE` user creates a valid private exercise for their own use
+- **THEN** the system SHALL allow the action and associate the exercise with
+  that user's UUID
+
+#### Scenario: Athlete manages own private exercise
+- **WHEN** an `ATHLETE` user edits or deactivates a private exercise they own
+- **THEN** the system SHALL allow the action if validation passes
+
+#### Scenario: Athlete cannot manage global exercises
+- **WHEN** an `ATHLETE` user attempts to create, edit or deactivate a global
+  exercise
+- **THEN** the system SHALL reject the action
+
+#### Scenario: Athlete cannot manage another user's private exercise
+- **WHEN** an `ATHLETE` user attempts to edit or deactivate a private exercise
+  owned by another user
 - **THEN** the system SHALL reject the action
 
 ### Requirement: User management permissions
