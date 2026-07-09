@@ -1,0 +1,1 @@
+- [Phoenix frontend setup](phoenix-frontend-setup.md) — Next.js 16 on Replit: config quirks, port, and HMR fix.
