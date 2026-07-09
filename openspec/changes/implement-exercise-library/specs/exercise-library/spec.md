@@ -11,8 +11,7 @@ module.
 #### Scenario: Module ownership
 - **WHEN** exercise library behavior is implemented
 - **THEN** the module SHALL own the exercise domain model, repository,
-  database table, ownership rules, read API, private exercise write API and
-  initial seed data
+  database table, ownership fields, read API and initial seed data
 
 #### Scenario: Out-of-bound behavior
 - **WHEN** workout-template-specific sets, reps, rest times, execution notes or
@@ -66,6 +65,9 @@ Phoenix SHALL persist exercises in a PostgreSQL table named `exercises`.
 
 ### Requirement: Exercise read API
 Phoenix SHALL expose a read-only exercise API for the initial implementation.
+
+The initial implementation SHALL include response fields needed by future
+private exercises but SHALL NOT implement private exercise write endpoints.
 
 #### Scenario: List exercises
 - **WHEN** a client requests `GET /api/exercises`
