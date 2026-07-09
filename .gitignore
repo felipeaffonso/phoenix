@@ -31,3 +31,14 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Node / Next.js ###
+node_modules/
+src/frontend/node_modules/
+.next/
+src/frontend/.next/
+out/
+src/frontend/out/
+.vercel/
+src/frontend/.vercel/
+*.tsbuildinfo
