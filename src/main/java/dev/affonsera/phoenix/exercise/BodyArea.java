@@ -1,0 +1,22 @@
+package dev.affonsera.phoenix.exercise;
+
+public enum BodyArea {
+	CHEST,
+	UPPER_CHEST,
+	BACK,
+	LATS,
+	SHOULDERS,
+	LATERAL_DELTS,
+	REAR_DELTS,
+	TRICEPS,
+	BICEPS,
+	QUADS,
+	HAMSTRINGS,
+	GLUTES,
+	GLUTE_MEDIUS,
+	CALVES,
+	ABS,
+	CORE,
+	CARDIO,
+	MOBILITY
+}

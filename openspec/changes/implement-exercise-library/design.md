@@ -25,6 +25,7 @@ the proposal, delta spec, design and tasks are accepted.
 - No workout-template module.
 - No workout player, history or progression engine.
 - No global exercise administration UI or admin write API.
+- No athlete-owned private exercise write API in this increment.
 - No authentication flow design beyond using the existing Spring Security
   scaffold.
 - No Redis usage.
@@ -60,10 +61,11 @@ references less portable and exposes implementation details to API clients.
 
 ### Keep Global Catalog Writes Out Of The Initial Read API
 
-The first implementation exposes exercise reads for global and owner-visible
-private exercises. Athlete-owned private exercise write contracts are documented
-in the Exercise Library spec, but global catalog writes remain separate admin
-behavior.
+The first implementation exposes exercise reads for global catalog exercises
+and preserves the schema fields needed for future owner-visible private
+exercises. Athlete-owned private exercise write contracts are documented in the
+Exercise Library spec, but private write endpoints will be implemented in a
+later increment after identity and authorization behavior is accepted.
 
 Alternative considered: implement global CRUD immediately. Global CRUD requires
 admin permissions, audit behavior and admin surfaces that belong to the
@@ -86,18 +88,21 @@ data in the infrastructure repository, violating the repository boundary.
 - Spring Security may block API smoke tests by default -> Tests should either
   use Spring Security test support or document temporary test configuration
   without weakening production defaults.
-- No local PostgreSQL is guaranteed in this repo -> Repository tests may need a
-  documented test database strategy before implementation, or start with
-  slice/domain/API tests that do not pretend persistence is validated.
+- Local PostgreSQL lives in `phoenix-infra` and may not be reachable from all
+  development contexts -> This change adds a `local` profile that imports the
+  optional infra `.env`, while repository/migration tests remain deferred until
+  a repeatable database test strategy is accepted.
 
 ## Migration Plan
 
 1. Add the `exercise` module code.
 2. Add schema and seed data in the product repository.
-3. Add tests for domain validation and API behavior.
-4. Add repository/integration tests only when a PostgreSQL test strategy is
-   documented.
-5. Run `openspec validate --specs`, `openspec validate implement-exercise-library`
+3. Add a local datasource profile that can read `../phoenix-infra/.env` without
+   committing secrets.
+4. Add tests for domain validation and API behavior.
+5. Add repository/integration tests only after a repeatable PostgreSQL test
+   strategy is accepted.
+6. Run `openspec validate --specs`, `openspec validate implement-exercise-library`
    and Maven tests before implementation is considered complete.
 
 Rollback is straightforward before production data exists: remove the module,
@@ -105,10 +110,26 @@ schema and seed files from the branch.
 
 ## Open Questions
 
-- Should repository tests use Testcontainers, a local PostgreSQL profile or an
-  infra-provided database? This must be documented before claiming persistence
-  behavior is fully tested.
 - Should API endpoints be temporarily accessible during early MVP development,
   or protected immediately by authentication once auth is specified?
-- Should private exercise write endpoints be implemented in the same increment
-  as the read API or in the next exercise-management increment?
+
+## Implementation Cut
+
+This branch implements the read-only Exercise Library backend needed to replace
+frontend mocks later: global exercise schema, seed data, list/get APIs and API
+response contracts including `scope` and `ownerUserId`.
+
+Athlete-owned private exercise create, update and deactivate endpoints are
+explicitly deferred until the identity/access foundation is accepted and can
+provide authenticated user ownership.
+
+## Local Datasource Profile
+
+`application-local.yml` imports `../phoenix-infra/.env` as optional properties
+and configures PostgreSQL through environment placeholders. Secrets stay in
+`phoenix-infra` and are not committed to this repository.
+
+When the backend runs outside the Docker network, set `PHOENIX_POSTGRES_HOST`
+and `PHOENIX_POSTGRES_PORT` to the reachable host and port. When it runs inside
+the same Docker network as the Postgres service, those overrides can point to
+the service name and internal port.
