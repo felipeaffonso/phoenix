@@ -1,0 +1,22 @@
+# Git and editor state
+.git
+.gitignore
+.vscode
+.idea
+
+# Build outputs
+target
+build
+dist
+
+# Frontend local artifacts
+src/frontend/node_modules
+src/frontend/.next
+src/frontend/out
+src/frontend/.vercel
+src/frontend/*.tsbuildinfo
+
+# Local logs and env files
+*.log
+.env
+.env.*

@@ -1,6 +1,6 @@
 # Phoenix Frontend
 
-Protótipo funcional do Phoenix Web App — Next.js + TypeScript.
+Protótipo funcional do Phoenix Web App - Next.js + TypeScript.
 
 ## Comandos
 
@@ -8,7 +8,7 @@ Protótipo funcional do Phoenix Web App — Next.js + TypeScript.
 # Instalar dependências
 npm install
 
-# Rodar em modo de desenvolvimento (porta 3000)
+# Rodar em modo de desenvolvimento (porta 5000)
 npm run dev
 
 # Build de produção
@@ -54,6 +54,10 @@ ficam em memória e somem ao recarregar.
 
 ## Integração com o backend
 
+O frontend deve chamar o backend por URLs relativas em `/api/...`. Em
+desenvolvimento local, `next.config.ts` reescreve `/api/:path*` para
+`PHOENIX_API_ORIGIN`, com padrão `http://localhost:8080`.
+
 Para conectar ao backend real, substitua as funções em `src/lib/adapters/exercises.ts`
 por chamadas `fetch` para a API Spring Boot. A assinatura das funções não muda:
 
@@ -71,10 +75,10 @@ export async function listExercises(filters) {
 
 ## Stack
 
-- **Next.js 15** — App Router
-- **TypeScript** — strict mode
-- **CSS puro** — variáveis globais em `globals.css`, sem framework CSS
-- **PWA-ready** — estrutura preparada; manifest a adicionar
+- **Next.js 16** - App Router
+- **TypeScript** - strict mode
+- **CSS puro** - variáveis globais em `globals.css`, sem framework CSS
+- **PWA-ready** - estrutura preparada; manifest a adicionar
 
 ## Papéis disponíveis (dev)
 

@@ -165,6 +165,15 @@ Run backend tests with:
 mvn test
 ```
 
+Run the local application with frontend and backend as separate processes:
+
+```bash
+npm run backend:dev
+npm run frontend:dev
+```
+
+Runtime topology is documented in [`docs/development/RUNTIME_TOPOLOGY.md`](docs/development/RUNTIME_TOPOLOGY.md).
+
 ---
 
 ## Philosophy

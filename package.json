@@ -7,7 +7,11 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "backend:dev": "./mvnw spring-boot:run",
+    "frontend:dev": "npm --prefix src/frontend run dev",
+    "docker:build:backend": "docker build -f Dockerfile.backend -t phoenix-backend:local .",
+    "docker:build:frontend": "docker build -f src/frontend/Dockerfile -t phoenix-frontend:local src/frontend",
+    "test": "./mvnw test"
   },
   "keywords": [],
   "author": "",
