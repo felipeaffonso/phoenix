@@ -1,1 +1,2 @@
 - [Phoenix frontend setup](phoenix-frontend-setup.md) — Next.js 16 on Replit: config quirks, port, and HMR fix.
+- [Phoenix responsive layout](phoenix-responsive.md) — Mobile breakpoints, sidebar drawer pattern, and Browser Notification API usage.

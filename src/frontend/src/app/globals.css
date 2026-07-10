@@ -1244,3 +1244,241 @@ html, body {
 .mt-3 { margin-top: 12px; }
 .w-full { width: 100%; }
 .truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ─── Mobile topbar (hidden on desktop) ───────────────────────────────────── */
+
+.mobile-topbar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 52px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  z-index: 40;
+  align-items: center;
+  padding: 0 16px;
+  gap: 12px;
+}
+
+.mobile-topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  padding: 8px 6px;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.1s;
+}
+
+.hamburger-btn:hover {
+  background: var(--surface-2);
+  border-color: var(--border);
+}
+
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--text-2);
+  border-radius: 1px;
+  transition: background 0.1s;
+}
+
+/* ─── Sidebar overlay (mobile) ────────────────────────────────────────────── */
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 49;
+}
+
+/* Mobile close button inside sidebar — hidden on desktop */
+.sidebar-close-btn {
+  display: none;
+  margin-left: auto;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  color: var(--text-3);
+  font-size: 14px;
+  padding: 4px 6px;
+  cursor: pointer;
+  line-height: 1;
+  transition: all 0.1s;
+}
+
+.sidebar-close-btn:hover {
+  background: var(--surface-2);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+/* ─── Player main area ────────────────────────────────────────────────────── */
+
+.player-main {
+  min-width: 0;
+}
+
+/* ─── Responsive — mobile (≤ 768px) ──────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+  /* Show mobile chrome */
+  .mobile-topbar {
+    display: flex;
+  }
+
+  .sidebar-close-btn {
+    display: block;
+  }
+
+  /* Push all content below the topbar */
+  .main-content {
+    padding-top: 52px;
+  }
+
+  /* Sidebar becomes a fixed overlay drawer */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 50;
+    transform: translateX(-100%);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: none;
+    /* keep width, it's 216px which is fine */
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.5);
+  }
+
+  .sidebar-overlay {
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+  }
+
+  /* When overlay is rendered (menuOpen=true), JS adds it to DOM — always visible */
+  .sidebar-overlay {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Page layout */
+  .page-header {
+    padding: 14px 16px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .page-content {
+    padding: 0 16px 32px;
+  }
+
+  /* Library: stack table + detail panel vertically */
+  .library-layout {
+    flex-direction: column;
+  }
+
+  .detail-panel {
+    width: 100%;
+    position: static;
+  }
+
+  /* Tables: enable horizontal scroll rather than overflow */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Filter bar: selects shrink to share space */
+  .filter-select {
+    min-width: 0;
+    flex: 1;
+  }
+
+  /* Dashboard: 2-column stat grid on mobile */
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-value {
+    font-size: 22px;
+  }
+
+  /* Templates: single column on mobile */
+  .template-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Player: single column, sidebar (timer) moves above exercises */
+  .player-layout {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .player-sidebar {
+    order: -1; /* timer appears above the exercise list on mobile */
+  }
+
+  /* Bigger tap targets for series inputs */
+  .player-input {
+    width: 60px;
+    padding: 6px 6px;
+    font-size: 14px;
+  }
+
+  .player-exercise-name {
+    font-size: 15px;
+  }
+
+  /* Timer: slightly smaller on mobile so it fits without overflow */
+  .timer-display {
+    font-size: 32px;
+  }
+
+  /* Form modal: bottom sheet on mobile */
+  .form-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .form-modal {
+    max-width: 100%;
+    max-height: 92vh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+
+  /* History: tighten up */
+  .history-item {
+    gap: 10px;
+  }
+
+  /* Mock notice: smaller */
+  .mock-notice {
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+}
